@@ -1,141 +1,106 @@
-# Cosmin Grigore — Personal Site
+A bilingual personal portfolio website built with React and Vite. The site is a fully static application, requiring no backend or server-side rendering. After building, it consists of standard HTML, CSS, and JavaScript files that can be hosted on any static hosting platform.
 
-A static React (Vite) site. No server required to run it — it's plain HTML/CSS/JS
-once built, deployable anywhere that serves static files.
+The project is currently deployed with GitHub Pages, which provides a simple, free, and reliable hosting solution well suited for static websites.
 
-## Run it locally
+# Tech Stack
+React
+Vite
+JavaScript
+CSS
+GitHub Pages
+Features
+Fully responsive design
+English and Italian localization
+Accessible navigation and interactions
+SEO-friendly metadata and structured sharing previews
+Static deployment with no backend dependencies
+Internationalization
 
-```bash
-npm install
-npm run dev
-```
+*The website supports both English and Italian.*
 
-Open the printed localhost URL. Edit any file in `src/` and the page updates instantly.
+# Language selection follows this priority:
 
-## Build for deployment
+A previously selected language stored in localStorage
+The visitor's browser language (Italian browsers default to Italian)
+English as the fallback language
 
-```bash
-npm run build
-```
+# All interface text is managed in:
 
-This outputs a static `dist/` folder. Deploy that folder to any static host:
+src/i18n/translations.js
 
-- **Vercel / Netlify**: connect the repo (or drag-and-drop the `dist` folder on Netlify),
-  build command `npm run build`, output directory `dist`. Free tier is plenty for this.
-- **GitHub Pages**: push `dist/` to a `gh-pages` branch, or use an action that runs
-  the build command above.
+Each string is defined in both English and Italian, allowing the entire interface to switch languages consistently.
 
-No backend, database, or server process is needed for anything on this site.
+Project content is also localized within:
 
-## ✅ After you deploy: the 5-minute SEO checklist
+src/data/projects.js
+Project Data
 
-The SEO scaffolding is in place, but three files contain the placeholder
-`https://YOUR-DOMAIN.com` that you must replace with your real domain once you have it:
+Projects displayed in the Work section are generated from the data stored in:
 
-1. `index.html` — the canonical URL, all `og:` / `twitter:` URLs (search for `YOUR-DOMAIN`)
-2. `public/robots.txt` — the Sitemap line
-3. `public/sitemap.xml` — the `<loc>` URL
+src/data/projects.js
 
-Then, once live:
+# Each project contains information such as:
 
-- Submit the sitemap at [Google Search Console](https://search.google.com/search-console)
-  — this is how Google finds and ranks the site.
-- Paste your URL into [opengraph.xyz](https://www.opengraph.xyz) to confirm the link
-  preview (title + `og-image.png`) looks right on WhatsApp/LinkedIn.
+- title
+- year
+- status
+- location
+- localized descriptions
+- technology tags
+- external link
+- preview image
 
-`public/og-image.png` is the image shown when the site is shared. Feel free to
-replace it with anything 1200×630px.
+The Work section is rendered dynamically from this data.
 
-## Languages (English / Italian)
+# SEO
 
-The site is fully bilingual. How it decides which language to show:
+The project includes SEO scaffolding for deployment on a custom domain.
 
-1. If the visitor already picked a language with the EN/IT toggle in the nav,
-   that choice is remembered (localStorage) and wins.
-2. Otherwise, if their browser is set to Italian (the default for computers in
-   Italy), the site opens in Italian.
-3. Everyone else gets English.
+Several files contain placeholder URLs that should be replaced with the production domain before deployment:
 
-**To change any text on the site**, edit `src/i18n/translations.js` — every string
-appears twice, once under `en:` and once under `it:`. Keep both in sync.
+index.html
+public/robots.txt
+public/sitemap.xml
 
-Project descriptions live in `src/data/projects.js` and are also bilingual
-(see below).
+The repository also includes:
 
-## Adding a new project
+canonical URLs
+Open Graph metadata
+Twitter Card metadata
+sitemap
+robots.txt
 
-Open `src/data/projects.js` and add an object to the array:
+Social media previews use:
 
-```js
-{
-  id: 'unique-slug',
-  title: 'Project Name',
-  year: '2026',
-  status: { en: 'Live', it: 'Online' },   // optional — omit if not needed
-  location: 'City, Country',
-  description: {
-    en: 'One or two sentences about it.',
-    it: 'Una o due frasi a riguardo.',
-  },
-  tags: ['React', 'Node.js'],
-  link: 'https://example.com',            // '' if there's nothing to link yet
-  preview: '/previews/placeholder.svg',   // see "Project previews" below
-}
-```
+public/og-image.png
 
-It'll appear automatically in the Work section, in order, above the "more on the way" tile.
-When `link` is set, the whole card becomes clickable and a "Visit →" label appears.
+The recommended image size is 1200 × 630 px.
 
-## Project previews (replacing the placeholder)
+After deployment, the sitemap can be submitted to Google Search Console to improve indexing, and the Open Graph preview can be verified using tools such as OpenGraph.xyz.
 
-Each project card shows a thumbnail. Right now they all use
-`public/previews/placeholder.svg`. To use a real screenshot:
+# Accessibility
 
-1. Take a screenshot of the project (a wide crop looks best — roughly 8:5,
-   e.g. 1280×800px). Save it as PNG, JPG or WebP.
-2. Drop the file into `public/previews/`, e.g. `public/previews/iryse.png`.
-3. In `src/data/projects.js`, change that project's `preview` field to
-   `'/previews/iryse.png'`.
+Accessibility was considered throughout the project.
 
-That's it — no code changes. Tip: keep images under ~300 KB (tinypng.com
-compresses them well) so the page stays fast.
+Implemented features include:
 
-## Filling in LinkedIn / Instagram
+support for prefers-reduced-motion
+visible keyboard focus indicators
+skip-to-content navigation
+dynamic <html lang> updates
+localized page titles and descriptions
+WCAG-conscious color contrast improvements for readability
 
-Open `src/data/socials.js` and paste the URL into the matching `href: ''`. Until
-you do, that link shows as "coming soon" instead of a dead link.
+Interactive animations automatically disable for users who prefer reduced motion while maintaining the overall visual appearance of the site.
 
-## Setting up the contact form
+Deployment
 
-Right now the form works via a `mailto:` fallback — it opens the visitor's email
-client pre-filled with their message. To make it submit silently instead:
+The application is designed for static hosting and can be deployed to platforms including:
 
-1. Create a free form at formspree.io (or a similar service — Web3Forms is
-   another good free option).
-2. Copy the endpoint URL it gives you.
-3. Open `src/components/Contact.jsx` and replace the `FORM_ENDPOINT` constant
-   near the top with your real endpoint.
+GitHub Pages
+Netlify
+Vercel
+Cloudflare Pages
+Any static web server
 
-That's it — no server code needed on your end either way.
-
-## Adding your photo (dithered hero background)
-
-You mentioned wanting your face dithered into the background eventually. The
-Game of Life canvas (`src/components/GameOfLifeCanvas.jsx`) already contains the
-ordered-dither (Bayer matrix) color logic used for the automaton. The cleanest
-way to add a dithered portrait later: sample your photo's luminance onto the
-same grid, and use it as the *seed pattern* the automaton starts from (or blend
-it in as a second "glow" layer). Send over a photo whenever you're ready and
-this can be wired in without changing the rest of the design.
-
-## Accessibility notes
-
-- All animation (the Game of Life canvas, scroll indicator) respects
-  `prefers-reduced-motion` — reduced-motion visitors get a still, frozen frame.
-- Focus states are visible everywhere (olive outline) for keyboard navigation.
-- A skip-to-content link is present for screen reader / keyboard users, in the
-  visitor's language.
-- The `<html lang>` attribute, page title and meta description all update when
-  the language changes.
-- Color contrast was re-checked after the legibility pass: secondary text is now
-  `#9ba695` (≈7:1 on the dark background) and body copy `#d4d5cd`.
+Running a production build generates static assets that require no server-side processing.
