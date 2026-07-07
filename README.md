@@ -104,3 +104,5 @@ Cloudflare Pages
 Any static web server
 
 Running a production build generates static assets that require no server-side processing.
+
+Future changes to be made: Remake icon; better readability of the titles (maybe add a background to info like "full-stack developer & graphic designer" or change colors, it sometimes gets confused with the cellular automata); add a pop-up page to the projects section that appears as a blog post on each project with more details, this or just a multi page set-up.
