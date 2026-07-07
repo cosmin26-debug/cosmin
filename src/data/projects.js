@@ -32,7 +32,7 @@ export const projects = [
   {
     id: 'octopus-goulash',
     title: 'Octopus Goulash',
-    year: '2026',
+    year: '2024—2026',
     status: { en: 'On Steam', it: 'Su Steam' },
     location: 'Roma, IT',
     description: {
@@ -41,6 +41,20 @@ export const projects = [
     },
     tags: ['Unity', 'C#', 'UI Elements'],
     link: 'https://store.steampowered.com/app/2810700/Octopus_Goulash/',
+    preview: '/previews/placeholder.svg',
+  },
+  {
+    id: 'personal-website',
+    title: 'Personal Website',
+    year: '2024—2026',
+    status: { en: 'You are here!', it: 'Sei qui!' },
+    location: 'Roma, IT',
+    description: {
+      en: 'The website you are currently on! A study on accessibility, multi-language and emergent art.',
+      it: 'Il sito su cui sei adesso! Uno studio su accessibilità, multi-lingua ed arte emergente.',
+    },
+    tags: ['React', 'JS', 'i18n'],
+    link: '',
     preview: '/previews/placeholder.svg',
   },
 ]
