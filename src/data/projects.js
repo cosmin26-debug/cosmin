@@ -11,7 +11,7 @@ export const projects = [
     },
     tags: ['React', 'SPA', 'Admin Dashboard'],
     link: '',
-    preview: '/previews/iryse.png',
+    preview: '/previews/iryse.svg',
   },
   {
     id: 'molise-festival',
@@ -25,6 +25,6 @@ export const projects = [
     },
     tags: ['Vanilla JS', 'Node.js', 'Game of Life'],
     link: '',
-    preview: '/previews/pda.png',
+    preview: '/previews/pda.svg',
   },
 ]
