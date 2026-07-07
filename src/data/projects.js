@@ -1,3 +1,5 @@
+
+
 export const projects = [
   {
     id: 'iryse',
@@ -11,7 +13,7 @@ export const projects = [
     },
     tags: ['React', 'SPA', 'Admin Dashboard'],
     link: '',
-    preview: '/previews/iryse.svg',
+    preview: '/previews/placeholder.svg',
   },
   {
     id: 'molise-festival',
@@ -25,6 +27,6 @@ export const projects = [
     },
     tags: ['Vanilla JS', 'Node.js', 'Game of Life'],
     link: '',
-    preview: '/previews/pda.svg',
+    preview: '/previews/placeholder.svg',
   },
 ]
