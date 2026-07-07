@@ -3,10 +3,8 @@ import { email, socials } from '../data/socials'
 import { useLang } from '../i18n/LanguageContext'
 import './Contact.css'
 
-// Once you create a free form at https://formspree.io, replace the string
-// below with your endpoint (looks like 'https://formspree.io/f/xxxxxxx').
-// Until then, the form falls back to opening the visitor's email client.
-const FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'
+
+const FORM_ENDPOINT = 'https://formspree.io/f/mgojqrqp'
 
 export default function Contact() {
   const { t } = useLang()

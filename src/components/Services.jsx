@@ -15,8 +15,7 @@ export default function Services() {
           {t.services.items.map((item, i) => (
             <article key={item.name} className="services__item">
               <span className="services__marker" aria-hidden="true">
-                {/* tiny still-life from the site's automaton: a different Game of Life
-                    pattern per service (block, blinker, glider) */}
+                {}
                 <ServiceGlyph index={i} />
               </span>
               <h3>{item.name}</h3>

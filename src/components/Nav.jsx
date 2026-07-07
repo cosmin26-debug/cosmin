@@ -14,8 +14,7 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // "Contact" as a plain link was redundant with the "Let's talk" button —
-  // both went to #contact — so the button is now the single path there.
+
   const links = [
     { href: '#about', label: t.nav.about },
     { href: '#services', label: t.nav.services },

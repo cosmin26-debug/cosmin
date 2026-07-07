@@ -1,13 +1,3 @@
-// Add a new project by adding an object to this array.
-//
-// `description` and `status` are bilingual: give them as { en: '...', it: '...' }.
-//   (A plain string also works — it will show the same text in both languages.)
-// `tags` show as small mono pills.
-// `link` is optional — leave it '' if there's nothing to link to yet.
-// `preview` is the screenshot/thumbnail shown on the card. It points to a file
-//   in the `public/previews/` folder. See the README ("Project previews") for
-//   how to replace the placeholder with a real screenshot.
-
 export const projects = [
   {
     id: 'iryse',

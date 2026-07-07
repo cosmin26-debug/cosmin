@@ -1,10 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import { translations } from './translations'
 
-// How the language is chosen, in order of priority:
-// 1. A choice the visitor already made (saved in localStorage)
-// 2. The browser's language — Italian browsers get Italian automatically
-// 3. English as the fallback for everyone else
+
 function detectLang() {
   try {
     const saved = localStorage.getItem('lang')
@@ -31,7 +28,7 @@ export function LanguageProvider({ children }) {
     try {
       localStorage.setItem('lang', lang)
     } catch {
-      // fine — the choice just won't persist across visits
+      
     }
   }, [lang])
 
