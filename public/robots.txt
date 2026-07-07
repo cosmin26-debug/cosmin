@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# TODO after deploy: replace with your real domain
-Sitemap: https://YOUR-DOMAIN.com/sitemap.xml
+
+Sitemap: https://cosmin26-debug.github.io/cosmin/sitemap.xml

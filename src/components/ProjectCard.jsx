@@ -11,13 +11,19 @@ export default function ProjectCard({ project, index }) {
   const CardTag = link ? 'a' : 'div'
   const cardProps = link ? { href: link, target: '_blank', rel: 'noreferrer' } : {}
 
+  // Prefix with Vite's base URL so previews work when the site is served from a
+  // subpath (e.g. GitHub Pages at /cosmin/) as well as at a root domain.
+  const previewSrc = preview
+    ? import.meta.env.BASE_URL.replace(/\/$/, '') + preview
+    : null
+
   return (
     <CardTag className="project-card" {...cardProps}>
       <div className="project-card__layout">
         {preview && (
           <div className="project-card__preview">
             <img
-              src={preview}
+              src={previewSrc}
               alt={`${t.work.previewAlt} ${title}`}
               loading="lazy"
               width="640"
