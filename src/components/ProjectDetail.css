@@ -1,0 +1,122 @@
+.detail {
+  min-height: 100vh;
+}
+
+.detail--missing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding-top: clamp(120px, 14vw, 160px);
+}
+
+.detail .section-inner {
+  padding-top: clamp(120px, 12vw, 160px);
+  max-width: 860px;
+}
+
+.detail__back {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  color: var(--olive);
+  text-decoration: none;
+  margin-bottom: 40px;
+}
+
+.detail__back:hover {
+  color: var(--focus);
+}
+
+.detail__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.detail__meta {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.detail__heading h1 {
+  font-size: clamp(32px, 5vw, 52px);
+}
+
+.detail__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin: 32px 0 0;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.detail__facts dt {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.detail__facts dd {
+  margin: 0;
+  font-size: 15px;
+  color: var(--paper);
+}
+
+.detail__cta {
+  margin-top: 28px;
+}
+
+.detail__desc {
+  margin-top: 32px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 66ch;
+}
+
+.detail__sections {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.detail__section h2 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.detail__section p {
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 66ch;
+}
+
+.detail__soon {
+  margin-top: 24px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--muted);
+  border-left: 2px solid var(--olive-dim);
+  padding-left: 16px;
+}
+
+.detail__tags {
+  margin-top: 44px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}

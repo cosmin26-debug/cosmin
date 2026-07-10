@@ -52,6 +52,27 @@ src/data/projects.js
 
 The Work section is rendered dynamically from this data.
 
+# Project screenshots
+
+Project pictures are managed with folders, not code. To add or change the pictures of a project, drop image files into a folder named after the project's `id`:
+
+src/data/screenshots/<project-id>/
+
+For example:
+
+src/data/screenshots/iryse/01-homepage.png
+src/data/screenshots/iryse/02-admin-dashboard.png
+
+Rules:
+
+- Images appear in filename order — prefix them with numbers (`01-`, `02-`, …) to control the sequence.
+- The first image is also used as the card thumbnail in the Work section.
+- The rest of the filename becomes the image's alt text (`02-admin-dashboard.png` → "admin dashboard"), so use descriptive dash-separated names.
+- Supported formats: png, jpg, jpeg, webp, avif, gif, svg.
+- A project with no folder (or an empty one) falls back to the placeholder set in its `preview` field in `src/data/projects.js`.
+
+The project detail page shows every image in the folder as a scrollable gallery (swipe, trackpad, or the arrow buttons). Nothing else needs to be edited — the folder is picked up automatically at build time.
+
 # SEO
 
 The project includes SEO scaffolding for deployment on a custom domain.

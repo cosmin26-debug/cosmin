@@ -17,13 +17,6 @@ export default function Work() {
           {projects.map((p, i) => (
             <ProjectCard key={p.id} project={p} index={i} />
           ))}
-
-          <div className="project-card project-card--ghost">
-            <span className="project-card__ghost-num">
-              {String(projects.length + 1).padStart(2, '0')}
-            </span>
-            <p>{t.work.more}</p>
-          </div>
         </div>
       </div>
     </section>

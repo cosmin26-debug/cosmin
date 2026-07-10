@@ -1,20 +1,59 @@
 .project-card {
-  display: block;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) 1fr;
+  gap: clamp(24px, 3.5vw, 44px);
+  align-items: start;
   border: 1px solid var(--line);
   padding: clamp(24px, 4vw, 40px);
-  text-decoration: none;
-  color: inherit;
-  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
   background: var(--void-2);
+  transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
-a.project-card:hover {
+.project-card:has(.project-card__stretched-link:hover) {
   border-color: var(--olive-dim);
   transform: translateY(-2px);
 }
 
 .project-card + .project-card {
   margin-top: 18px;
+}
+
+/* The invisible link that makes the whole card clickable. Sits above the
+   card's own background but below the external "visit" link, so the two
+   destinations (case study vs. live site) stay independently clickable. */
+.project-card__stretched-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.project-card__stretched-link:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -2px;
+}
+
+.project-card__external {
+  position: absolute;
+  top: clamp(24px, 4vw, 40px);
+  right: clamp(24px, 4vw, 40px);
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--olive);
+  text-decoration: none;
+  background: var(--void-2);
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+}
+
+.project-card__external:hover {
+  border-color: var(--olive);
+  color: var(--focus);
+}
+
+.project-card__body {
+  min-width: 0;
 }
 
 .project-card__top {
@@ -93,24 +132,6 @@ a.project-card:hover {
   color: var(--olive);
 }
 
-@media (max-width: 560px) {
-  .project-card__top {
-    gap: 12px;
-  }
-  .project-card__status {
-    order: 3;
-  }
-}
-
-/* ---------- Preview thumbnail layout ---------- */
-
-.project-card__layout {
-  display: grid;
-  grid-template-columns: minmax(220px, 300px) 1fr;
-  gap: clamp(24px, 3.5vw, 44px);
-  align-items: start;
-}
-
 .project-card__preview {
   border: 1px solid var(--line);
   background: var(--void);
@@ -126,22 +147,32 @@ a.project-card:hover {
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-a.project-card:hover .project-card__preview img {
+.project-card:has(.project-card__stretched-link:hover) .project-card__preview img {
   transform: scale(1.03);
   filter: saturate(1);
 }
 
-.project-card__body {
-  min-width: 0;
-}
-
 @media (max-width: 720px) {
-  .project-card__layout {
+  .project-card {
     grid-template-columns: 1fr;
   }
   .project-card__preview {
     max-height: 200px;
     aspect-ratio: auto;
     height: 180px;
+  }
+  .project-card__external {
+    position: static;
+    display: inline-block;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 560px) {
+  .project-card__top {
+    gap: 12px;
+  }
+  .project-card__status {
+    order: 3;
   }
 }
