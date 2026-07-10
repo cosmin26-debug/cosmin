@@ -10,11 +10,6 @@ export default function ProjectCard({ project, index }) {
   const statusText = pick(status, lang)
   const num = String(index + 1).padStart(2, '0')
 
-  // The thumbnail is the first screenshot from src/data/screenshots/<id>/
-  // (Vite already gives those base-aware URLs). Projects without a
-  // screenshot folder fall back to their `preview` placeholder, which lives
-  // in public/ and needs the base URL prefixed by hand so it works when the
-  // site is served from a subpath (e.g. GitHub Pages) as well as a root domain.
   const firstShot = screenshotsFor(id)[0]
   const previewSrc =
     firstShot?.src ||
@@ -60,10 +55,7 @@ export default function ProjectCard({ project, index }) {
         </div>
       </div>
 
-      {/* Stretched link: makes the whole card clickable while staying valid HTML
-          (a sibling <a>, not nested inside another <a>). The external "visit
-          live site" link below sits on top of it and stays independently
-          clickable because it's later in the DOM / higher stacking order. */}
+      {/* Stretched link: whole card is clickable without nesting <a> tags. */}
       <a
         className="project-card__stretched-link"
         href={projectHref(id)}

@@ -1,23 +1,5 @@
-// HOW TO ADD OR CHANGE PROJECT PICTURES
-//
-// Drop image files into a folder named after the project's `id`:
-//
-//   src/data/screenshots/<project-id>/
-//
-//   e.g.  src/data/screenshots/iryse/01-homepage.png
-//         src/data/screenshots/iryse/02-admin-dashboard.png
-//
-// That's it — no other file needs to change. This module finds them at
-// build time. A few rules:
-//
-//   - Images show in filename order, so prefix with numbers (01-, 02-, …)
-//     to control the sequence.
-//   - The FIRST image is also used as the card thumbnail in the Work section.
-//   - The rest of the filename becomes the image's alt text:
-//     "02-admin-dashboard.png" → "admin dashboard".
-//   - Supported formats: png, jpg, jpeg, webp, avif, gif, svg.
-//   - A project with no folder (or an empty one) falls back to its
-//     `preview` placeholder from src/data/projects.js.
+// Collects project screenshots from ./screenshots/<project-id>/ at build time,
+// sorted by filename. Alt text is derived from the filename.
 
 const modules = import.meta.glob(
   './screenshots/*/*.{png,jpg,jpeg,webp,avif,gif,svg,PNG,JPG,JPEG,WEBP}',

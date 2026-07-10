@@ -1,6 +1,3 @@
-// Every piece of interface text lives here, in both languages.
-// To change any wording on the site, edit it in this file (both `en` and `it`).
-
 export const translations = {
   en: {
     meta: {
@@ -74,6 +71,8 @@ export const translations = {
         gallery: 'Screenshots',
         prevImage: 'Previous screenshot',
         nextImage: 'Next screenshot',
+        expandImage: 'View full screen',
+        closeImage: 'Close full screen view',
         comingSoon: 'A full write-up for this project is coming soon.',
         notFound: "That project doesn't exist.",
         backHome: '← Back to home',
@@ -173,6 +172,8 @@ export const translations = {
         gallery: 'Screenshot',
         prevImage: 'Screenshot precedente',
         nextImage: 'Screenshot successivo',
+        expandImage: 'Vedi a schermo intero',
+        closeImage: 'Chiudi la visualizzazione a schermo intero',
         comingSoon: 'Un approfondimento su questo progetto arriverà presto.',
         notFound: 'Questo progetto non esiste.',
         backHome: '← Torna alla home',

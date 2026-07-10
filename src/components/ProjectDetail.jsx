@@ -9,8 +9,7 @@ export default function ProjectDetail({ slug }) {
   const { lang, t } = useLang()
   const project = projects.find((p) => p.id === slug)
 
-  // Scroll to top on entry — this is a fresh "page", not a continuation of
-  // wherever the visitor was scrolled to on the home page.
+  // Each detail page opens scrolled to the top.
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [slug])
@@ -34,8 +33,6 @@ export default function ProjectDetail({ slug }) {
   const timeline = cs ? pick(cs.timeline, lang) : null
   const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 
-  // Screenshots come from src/data/screenshots/<id>/ (see that folder's
-  // loader for the naming rules). No folder yet → show the placeholder.
   const shots = screenshotsFor(project.id)
   const images =
     shots.length > 0
@@ -94,6 +91,8 @@ export default function ProjectDetail({ slug }) {
           label={`${t.work.detail.gallery} — ${title}`}
           prevLabel={t.work.detail.prevImage}
           nextLabel={t.work.detail.nextImage}
+          expandLabel={t.work.detail.expandImage}
+          closeLabel={t.work.detail.closeImage}
         />
 
         <p className="detail__desc">{description}</p>

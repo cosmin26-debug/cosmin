@@ -1,21 +1,3 @@
-// Add a new project by adding an object to this array.
-//
-// `description` and `status` are bilingual: give them as { en: '...', it: '...' }.
-//   (A plain string also works — it will show the same text in both languages.)
-// `tags` show as small mono pills.
-// `link` is optional — leave it '' if there's nothing to link to yet.
-//
-// PICTURES don't live in this file. Drop them into a folder named after the
-// project's `id`:  src/data/screenshots/<id>/  (e.g. src/data/screenshots/iryse/).
-// The first image (by filename order) becomes the card thumbnail, and the
-// detail page shows all of them in a scrollable gallery. See the naming rules
-// in src/data/screenshots.js or the README ("Project screenshots").
-// `preview` is only the placeholder shown while a project has no folder yet.
-//
-// `caseStudy` is optional. Add it to give a project its own detail page
-// (reached by clicking the card). Leave it out entirely and the card still
-// gets a working detail page — it just shows the short description instead.
-
 export const projects = [
   {
     id: 'iryse',
@@ -27,7 +9,7 @@ export const projects = [
       en: 'A multiservice single-page application for a company based in Rome. Built end to end, including an advanced admin dashboard covering every page on the site and internal tools that support the company\'s day-to-day operations.',
       it: 'Una single-page application multiservizio per un\'azienda di Roma. Realizzata dall\'inizio alla fine, incluso un pannello di amministrazione avanzato che copre ogni pagina del sito e strumenti interni a supporto delle operazioni quotidiane dell\'azienda.',
     },
-    tags: ['React', 'SPA', 'Admin Dashboard'],
+    tags: ['React', 'Landing page', 'Admin Dashboard'],
     link: '',
     preview: '/previews/placeholder.svg',
     caseStudy: {
@@ -70,7 +52,7 @@ export const projects = [
     },
     tags: ['Vanilla JS', 'Node.js', 'Game of Life'],
     link: '',
-    preview: '/previews/placeholder.svg',
+    preview: '/previews/placeholder.png',
     caseStudy: {
       role: { en: 'Solo developer & designer', it: 'Sviluppatore e designer unico' },
       timeline: { en: 'Launching September 2026', it: 'Online da settembre 2026' },

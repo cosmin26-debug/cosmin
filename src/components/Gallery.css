@@ -8,7 +8,6 @@
   scroll-snap-type: x mandatory;
   border: 1px solid var(--line);
   background: var(--void-2);
-  /* Buttons + snap replace the scrollbar; keep the strip clean. */
   scrollbar-width: none;
 }
 
@@ -26,13 +25,28 @@
   min-width: 0;
   margin: 0;
   scroll-snap-align: start;
+  aspect-ratio: 16 / 10;
+}
+
+.gallery__zoom {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
+.gallery__zoom:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -2px;
 }
 
 .gallery__slide img {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: top;
+  height: 100%;
+  object-fit: contain;
   display: block;
 }
 
@@ -76,4 +90,42 @@
 .gallery__btn:disabled {
   opacity: 0.35;
   cursor: default;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 48px);
+  background: rgba(0, 0, 0, 0.92);
+}
+
+.lightbox__img {
+  max-width: 100%;
+  max-height: calc(100vh - 140px);
+  width: auto;
+  height: auto;
+  border: 1px solid var(--line);
+  background: var(--void-2);
+  cursor: default;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: clamp(16px, 3vw, 28px);
+  right: clamp(16px, 3vw, 28px);
+}
+
+.lightbox__controls {
+  position: absolute;
+  bottom: clamp(16px, 3vw, 28px);
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }
